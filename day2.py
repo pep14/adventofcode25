@@ -19,6 +19,9 @@ def part1():
 
     return sum(nums)
 
+def part1oneliner():
+    return sum(next((n for n in rng if (not len(str(n))%2) and (str(n)[:len(str(n))//2] == str(n)[len(str(n))//2:])),0) for rng in [range(int(i.split("-")[0]), int(i.split("-")[1])) for i in open("input2.txt", "r").read().split(",")])
+
 def part2():
     with open("input2.txt", "r") as factors:
         data = factors.read().split(",")
@@ -44,4 +47,4 @@ def part2():
     return sum(nums)
 
 
-print("part 1: %i\npart 2: %i" % (part1(), part2()))
+print("part 1: %i\npart 2: %i" % (part1oneliner(), part2()))
