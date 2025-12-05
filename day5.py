@@ -36,8 +36,6 @@ def part2():
             continue
     
     ranges_overlapping.sort(key=lambda x: x[0])
-    print(ranges_overlapping)
-    print(ranges)
     
     for r in ranges_overlapping:
         found = False
@@ -49,8 +47,6 @@ def part2():
                 break
         if not found:
             ranges.append(r)
-    
-    print(ranges)
     
     range_sizes = [
         r[1] - r[0] + 1
